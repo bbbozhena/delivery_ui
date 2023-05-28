@@ -24,13 +24,11 @@ export const BasketPage = () => {
         customerName: customerName,
         items: cartItems,
       };
-      console.log(orderData);
   
       axios
         .post(process.env.API_URL + "/api/product_order", orderData)
         .then((response) => {
-          console.log(response.data);
-          dispatch(clearCart()); // Очищення корзини після успішного замовлення
+          dispatch(clearCart());
         })
         .catch((error) => {
           console.error(error);

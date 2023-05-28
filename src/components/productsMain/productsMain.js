@@ -18,7 +18,6 @@ export const ProductMain = () => {
       .get(process.env.REACT_APP_API_URL + "/api/restaurant")
       .then((response) => {
         setRestaurants(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -30,7 +29,6 @@ export const ProductMain = () => {
       .get(process.env.REACT_APP_API_URL + "/api/product")
       .then((response) => {
         setProducts(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error(error);
