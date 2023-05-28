@@ -27,7 +27,7 @@ export const BasketPage = () => {
       console.log(orderData);
   
       axios
-        .post("http://localhost:6002/api/product_order", orderData)
+        .post(process.env.API_URL + "/api/product_order", orderData)
         .then((response) => {
           console.log(response.data);
           dispatch(clearCart()); // Очищення корзини після успішного замовлення

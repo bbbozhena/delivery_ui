@@ -15,7 +15,7 @@ export const ProductMain = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6002/api/restaurant")
+      .get(process.env.REACT_APP_API_URL + "/api/restaurant")
       .then((response) => {
         setRestaurants(response.data);
         console.log(response.data);
@@ -27,7 +27,7 @@ export const ProductMain = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6002/api/product")
+      .get(process.env.REACT_APP_API_URL + "/api/product")
       .then((response) => {
         setProducts(response.data);
         console.log(response.data);
@@ -72,7 +72,7 @@ export const ProductMain = () => {
           <img
             width="300px"
             height="200px"
-            src={"http://localhost:6002/" + product.img}
+            src={process.env.REACT_APP_API_URL + "/" + product.img}
             alt={product.name}
           />
           <p>{product.name}</p>
